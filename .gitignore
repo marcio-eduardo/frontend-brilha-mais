@@ -1,25 +1,27 @@
-# Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
+# Learn more [https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files](https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files)
 
+# --- AGENTES DE IA ---
 .agent/
 .claude/
 .opencode/
 .gemini/
 .Projet_Docs/
+.gitignore/
 .scripts/
 AGENTS.md
 CLAUDE.md
 GEMINI.md
 
-# dependencies
+# --- DEPENDÊNCIAS ---
 node_modules/
 
-# Expo
+# --- EXPO ---
 .expo/
 dist/
 web-build/
 expo-env.d.ts
 
-# Native
+# --- NATIVE BUILD & KEYSTORES ---
 .kotlin/
 *.orig.*
 *.jks
@@ -28,24 +30,42 @@ expo-env.d.ts
 *.key
 *.mobileprovision
 
-# Metro
+# --- METRO & NODE ---
 .metro-health-check*
-
-# debug
 npm-debug.*
 yarn-debug.*
 yarn-error.*
+pnpm-debug.log*
 
-# macOS
+# --- SISTEMA OPERACIONAL ---
 .DS_Store
 *.pem
+Thumbs.db
 
-# local env files
-.env*.local
+# --- SEGURANÇA: VARIÁVEIS DE AMBIENTE (CORRIGIDO) ---
+# Ignora qualquer variação de arquivo .env para evitar vazamento de credenciais
+.env
+.env.local
+.env.*.local
+.env.development
+.env.test
+.env.production
+.env.line
 
-# typescript
+# --- IDEs / EDITORES (ADICIONADO) ---
+# Evita subir configurações locais do seu VS Code ou IntelliJ do notebook
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# --- TYPESCRIPT & TESTES ---
 *.tsbuildinfo
+coverage/
 
-# generated native folders
+# --- PASTAS NATIVAS GERADAS (EXPO PREBUILD) ---
 /ios
 /android
